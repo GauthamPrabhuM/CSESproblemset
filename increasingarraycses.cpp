@@ -42,19 +42,16 @@ void inputarray(ll A[], ll n)
     ll A[n];
     inputarray(A,n);
     ll moves=0;
-    ll j=1;
-    for(int i=0; i<n; i++)
+    for(ll j=0; j<n-1; j++)
     {
       
-      while(A[j]<A[i])
+      ll dif = 0;
+      if (A[j+1] < A[j])
       {
-
-         moves++;
-         A[j]++;
-
-      }   
-      j++;
-
+       dif = A[j] - A[j+1];
+        A[j+1] = A[j] ;
+        moves = moves + dif;
+      }
 
     }
     cout<<moves;
@@ -77,7 +74,7 @@ void inputarray(ll A[], ll n)
         cout.tie(nullptr);
         cout<<fixed;
         cout<<setprecision(10);
-          //   freopen("input.txt", "r", stdin);
+         //    freopen("input.txt", "r", stdin);
       // freopen("output.txt", "w", stdout);
 
         ll t=1;
